@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+ <style>
+     body{
+         display: flex;
+         flex-direction: column;
+     }
+     div button{
+        display: block;
+     }
+     div{
+        border:2px  solid gray;
+     }
+ </style>
+
+<body>
+    
+    <img src="https://cdn.pixabay.com/photo/2016/12/13/05/15/puppy-1903313_960_720.jpg" alt="img">
+<div>
+     <h1 id="c1"></h1>
+    <button id="b1">Likes</button>
+     
+    </div>
+    <div>
+    <h1 id="c2"></h1>
+    <button id="b2">dislikes</button>
+</div>
+
+</body>
+
+</html>
+<script>
+    let counter = document.querySelector("#c1");
+    let countera = document.querySelector("#c2");
+    let butt1 = document.querySelector("#b1");
+    let butt2 = document.querySelector("#b2");
+    let counter1 = localStorage.getItem('counter');
+    if (counter1 == null) {
+        counter1 = 0;
+    }
+    counter.innerText = counter1;
+    butt1.addEventListener("click", () => {
+        count = counter1++;
+        counter.innerText = count;
+        localStorage.setItem("counter", count)
+    })
+    let counter2 = localStorage.getItem('countera');
+    if (counter2 == null) {
+        counter2 = 0;
+    }
+    countera.innerText = counter2;
+    butt2.addEventListener("click", () => {
+        count1 = counter2++;
+        countera.innerText = count1;
+        localStorage.setItem("countera", count1)
+    })
+   
+
+</script>
